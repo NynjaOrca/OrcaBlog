@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 text-center">
+                <h1 class="responsive-h1">Animals</h1>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <hr>
+        <th:block th:each="animal : ${animals}">
+            <div class="animalRow" th:id="${animal.id}">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3">
+                        <h3 style="display:inline-block;margin-right:10px;" class="responsive-h3" th:text="${animal.id}"></h3>
+                        <form method="post" action="/animals/delete" style="display:inline-block;margin-right:10px;">
+                        <input type="hidden" name="id" th:value="${animal.id}" />
+                        <input style="display:inline-block;" type="submit" class="responsive-h3 btn btn-danger" value="Remove"/>
+                        </form>
+                        <a style="display:inline-block;" class="responsive-h3 btn btn-warning" th:href="'/animals/edit/'+${animal.id}">Edit</a>
+                    </div>
+                    <div class="col-sm-8 text-center">
+                        <h3 class="responsive-h3">
+                            <a th:href="'/animals/'+${animal.id}" th:text="${animal.commonName}">...</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </th:block>
+
+    </div>
+
+<script th:inline="javascript">
+        /*<![CDATA[*/
+
+            var animalRow = document.getElementsByClassName("animalRow");
+            var i;
+
+            for(i = 0; i < animalRow.length; i++){
+                if(animalRow[i].id % 2 == 1){
+                    animalRow[i].style.backgroundColor = "#eaeaea";
+                }else{
+                    animalRow[i].style.backgroundColor = "#d8d8d8";
+                };
+            };
+
+        /*]]>*/
+        </script>
+
+<div th:replace="fragments :: footer_scripts"></div>
+
+</body>
+</html>

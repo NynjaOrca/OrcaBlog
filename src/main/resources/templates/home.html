@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+    <body class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <h1>Hello!</h1>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <p>Welcome to <span th:text="${appName}">My App Name</span></p>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 jumbotron-fluid homepage-animal-jumbo">
+                <h1 class="responsive-h1">Blog</h1>
+                <p>Have conversations with me!</p>
+                <hr>
+                <p class="lead"><a href="/" class="responsive-h3 btn btn-success btn-lg" role="button">Navigate</a></p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 jumbotron-fluid text-right homepage-animal-jumbo">
+                <h1 class="responsive-h1">Animals</h1>
+                <p>Meet some of my favorite animals!</p>
+                <hr>
+                <p class="lead"><a href="/animals" class="responsive-h3 btn btn-success btn-lg" role="button">Navigate</a></p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 jumbotron-fluid homepage-animal-jumbo">
+                <h1 class="responsive-h1">Pokemon</h1>
+                <p>Meet some of my favorite Pokemon!</p>
+                <hr>
+                <p class="lead"><a href="/" class="responsive-h3 btn btn-success btn-lg" role="button">Navigate</a></p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 jumbotron-fluid text-right homepage-animal-jumbo">
+                <h1 class="responsive-h1">Music</h1>
+                <p>Listen to some dope tunes!</p>
+                <hr>
+                <p class="lead"><a href="/" class="responsive-h3 btn btn-success btn-lg" role="button">Navigate</a></p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 jumbotron-fluid homepage-animal-jumbo">
+                <h1 class="responsive-h1">Pictures</h1>
+                <p>Check out some pictures I took!</p>
+                <hr>
+                <p class="lead"><a href="/" class="responsive-h3 btn btn-success btn-lg" role="button">Navigate</a></p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 jumbotron-fluid text-right homepage-animal-jumbo">
+                <h1 class="responsive-h1">Video Games</h1>
+                <p>A list of all of my favorite games explained!</p>
+                <hr>
+                <p class="lead"><a href="/" class="responsive-h3 btn btn-success btn-lg" role="button">Navigate</a></p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+
+
+
+        <script th:inline="javascript">
+    /*<![CDATA[*/
+
+        var jumbo = document.getElementsByClassName("jumbotron-fluid");
+        var i;
+
+        for(i = 0; i < jumbo.length; i++){
+            if(i % 2 == 1){
+                jumbo[i].style.backgroundColor = "#eaeaea";
+            }else{
+                jumbo[i].style.backgroundColor = "#d8d8d8";
+            };
+        };
+
+    /*]]>*/
+    </script>
+
+    <div th:replace="fragments :: footer_scripts"></div>
+
+    </body>
+</html>
