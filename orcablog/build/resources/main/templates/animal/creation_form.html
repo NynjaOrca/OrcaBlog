@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+
+
+
+
+    <body class="container-fluid">
+
+    <nav th:replace="fragments :: navigation"></nav>
+
+    <div class="text-center col-sm-12">
+        <h1 th:text="${title}">Default Title</h1>
+    </div>
+
+        <div class="container">
+
+            <form method="post" th:object="${animal}">
+                <div class="row d-flex">
+                    <div class="form-group col-sm-4 flex-fill">
+                        <label th:for="genus">Genus</label> <span th:errors=" *{genus}" class="error"></span>
+                        <input class="form-control" th:field="*{genus}"/>
+
+                    </div>
+                    <div class="form-group col-sm-4 flex-fill">
+                        <label th:for="species">Species</label> <span th:errors=" *{species}" class="error"></span>
+                        <input class="form-control" th:field="*{species}" />
+
+                    </div>
+                    <div class="form-group col-sm-4 flex-fill">
+                        <label th:for="commonName">Common Name</label> <span th:errors=" *{commonName}" class="error"></span>
+                        <input class="form-control" th:field="*{commonName}" />
+                    </div>
+                </div>
+
+<!--
+                <div class="row d-flex">
+                    <div class="form-group col-sm-3 flex-fill">
+                        <label th:for="strength">Strength</label> <span th:errors=" *{strength}" class="error"></span>
+                        <input class="form-control" th:field="*{strength}"/>
+                    </div>
+                    <div class="form-group col-sm-3 flex-fill">
+                        <label th:for="dexterity">Dexterity</label> <span th:errors=" *{dexterity}" class="error"></span>
+                        <input class="form-control" th:field="*{dexterity}" />
+                    </div>
+                    <div class="form-group col-sm-3 flex-fill">
+                        <label th:for="defense">Defense</label> <span th:errors=" *{defense}" class="error"></span>
+                        <input class="form-control" th:field="*{defense}" />
+                    </div>
+                    <div class="form-group col-sm-3 flex-fill">
+                        <label th:for="speed">Speed</label> <span th:errors=" *{speed}" class="error"></span>
+                        <input class="form-control" th:field="*{speed}"/>
+                    </div>
+                </div>
+-->
+                <div class="container">
+                    <div class="row">
+                        <div class="container-fluid col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-8 block-field">
+                                    <div class="slidecontainer form-group">
+                                        <label th:for="strength">Strength</label> <span th:errors=" *{strength}" class="error"></span>
+                                        <input type="range" min="1" max="100" id="strengthRange" class="form-control" th:field="*{strength}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 bottom" id="strengthOut"></div>
+                            </div>
+                        </div>
+
+                        <div class="container col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-8 block-field">
+                                    <div class="slidecontainer form-group">
+                                        <label th:for="dexterity">Dexterity</label> <span th:errors=" *{dexterity}" class="error"></span>
+                                        <input type="range" min="1" max="100" id="dexterityRange" class="form-control" th:field="*{dexterity}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 bottom" id="dexterityOut"></div>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-8 block-field">
+                                    <div class="slidecontainer form-group">
+                                        <label th:for="defense">Defense</label> <span th:errors=" *{defense}" class="error"></span>
+                                        <input type="range" min="1" max="100" id="defenseRange" class="form-control" th:field="*{defense}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 bottom" id="defenseOut"></div>
+                            </div>
+                        </div>
+
+                        <div class="container col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-8 block-field">
+                                    <div class="slidecontainer form-group">
+                                        <label th:for="speed">Speed</label> <span th:errors=" *{speed}" class="error"></span>
+                                        <input type="range" min="1" max="100" id="speedRange" class="form-control" th:field="*{speed}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 bottom" id="speedOut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="form-group col-sm-8 text-center">
+                        <label th:for="description">Description</label> <span th:errors=" *{description}" class="error"></span>
+                        <textarea maxlength="500" id="text" name="text" style="resize:none;" rows="5" cols="40" class="form-control" th:field="*{description}"></textarea>
+
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+                <div class="row text-right">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8"><h6 id="count_message"></h6></div>
+                    <div class="col-sm-2"></div>
+                </div>
+                <input type="submit" value="Create Animal"/>
+            </form>
+
+        </div>
+
+
+
+        <div th:replace="fragments :: footer_scripts"></div>
+    </body>
+</html>
