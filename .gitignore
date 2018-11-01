@@ -1,5 +1,4 @@
 # Compiled class file
-*.class
 
 # Log file
 *.log
@@ -74,4 +73,7 @@ target
 transaction-logs
 .flattened-pom.xml
 secrets.yml
+<<<<<<< HEAD
 .gradletasknamecache
+=======
+>>>>>>> 35321a1c6ec431fccfad209ab15eca61d5d5fb50
