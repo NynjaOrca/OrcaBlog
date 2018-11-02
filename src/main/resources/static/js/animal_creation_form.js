@@ -2,9 +2,9 @@
 
         let singleAnimalRegex = /0123456789/;
 
-           if(window.location.pathname == "/animals/create" || window.location.href.indexOf("/animals/edit") > -1){
+           if(window.location.pathname == "/animals/create" || window.location.pathname == "/blog/create"){
 
-                var text_max = 255;
+                var text_max = 5000;
                 $('#count_message').html(text_max + ' remaining');
 
                 $('#text').keyup(function() {

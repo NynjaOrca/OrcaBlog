@@ -2,9 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
-<nav th:replace="fragments :: navigation"></nav>
 
-    <body class="container-fluid" id="singleAnimBody">
+
+    <body id="singleAnimBody">
+
+    <nav th:replace="fragments :: navigation"></nav>
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-1"></div>
@@ -68,7 +71,7 @@
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10 text-center border">
                     <h1 class="responsive-h1">Description</h1>
-                    <h3 class="responsive-h3" th:text="${animal.description}"></h3>
+                    <h3 class="responsive-h3" style="word-wrap:break-word;" th:text="${animal.description}"></h3>
                 </div>
                 <div class="col-sm-1"></div>
             </div>

@@ -24,8 +24,8 @@ public class Animal {
     @Column(nullable = false, unique = true, length = 100)
     private String commonName;
 
-    @Size(min=1, max=500, message=" (size must be between 1 and 500)")
-    @Column(nullable = false, length = 500)
+    @Size(min = 1, max = 5000, message = "(Size must be between 1 and 5000)")
+    @Column(nullable = false, length = 5000)
     private String description;
 
     @Min(value=1, message=" value must be at least 1")

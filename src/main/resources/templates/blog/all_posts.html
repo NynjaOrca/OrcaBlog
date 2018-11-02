@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 text-center">
+            <h1 class="responsive-h1">Posts</h1>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="container col-sm-10">
+            <div class="row">
+                <th:block th:each="post : ${posts}">
+                    <div class="container-fluid postRow col-sm-12" th:id="${post.id}">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3 class="responsive-h3" th:text="${post.id}"></h3>
+                            </div>
+                            <div class="col-sm-6">
+                                <h3 class="responsive-h3">
+                                    <a th:href="'/blog/'+${post.id}" th:text="${post.post_title}">...</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </th:block>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+
+<script th:inline="javascript">
+        /*<![CDATA[*/
+
+            var postRow = document.getElementsByClassName("postRow");
+            var i;
+
+            for(i = 0; i < postRow.length; i++){
+                if(postRow[i].id % 2 == 1){
+                    postRow[i].style.backgroundColor = "#eaeaea";
+                }else{
+                    postRow[i].style.backgroundColor = "#d8d8d8";
+                };
+            };
+
+        /*]]>*/
+        </script>
+
+<div th:replace="fragments :: footer_scripts"></div>
+
+</body>
+</html>

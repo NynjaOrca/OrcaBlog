@@ -2,9 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
-<nav th:replace="fragments :: navigation"></nav>
 
-    <body class="container-fluid">
+
+    <body>
+
+    <nav th:replace="fragments :: navigation"></nav>
 
         <div class="container">
             <div class="row">
@@ -22,10 +24,7 @@
                         <th:block th:each="animal : ${animals}">
                             <div class="container-fluid animalRow col-sm-12" th:id="${animal.id}">
                                 <div class="row">
-                                    <div class="col-sm-1">
-                                        <a class="danger" th:href="'/delete/' + ${animal.id}">DELETE</a>
-                                    </div>
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-6">
                                         <h3 class="responsive-h3" th:text="${animal.id}"></h3>
                                     </div>
                                     <div class="col-sm-6">

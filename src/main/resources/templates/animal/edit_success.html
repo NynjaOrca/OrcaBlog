@@ -2,11 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
-<div class="col-lg-12">
-    <nav th:replace="fragments :: navigation"></nav>
-</div>
 
-<body class="container-fluid">
+
+<body>
+
+<nav th:replace="fragments :: navigation"></nav>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-1"></div>
@@ -44,7 +45,7 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-12">
-                        <h3 class="responsive-h3" th:text="${animal.description}">...</h3>
+                        <h3 class="responsive-h3" style="word-wrap:break-word;" th:text="${animal.description}">...</h3>
                     </div>
                 </div>
             </div>
